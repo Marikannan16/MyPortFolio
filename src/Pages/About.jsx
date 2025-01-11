@@ -1,5 +1,5 @@
 import React from 'react'
-import profile from '../images/Profile.png'
+import profile from '../images/profile.png'
 import About2 from './About2'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
