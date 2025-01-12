@@ -38,7 +38,7 @@ const App = () => {
       <Resume/>
       <Projects/>
       <Contact/>
-      <span className='fixed top-[90%] left-[38%] z-50'>
+      <span className='fixed top-[90%] lg:left-[38%] right-2  z-50'>
         <span className='fixed'>
         <Nav/>
         </span>
