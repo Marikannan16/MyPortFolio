@@ -1,5 +1,5 @@
 import React from 'react'
-import hero from '../images/hero.jpg'
+import hero from '../images/hero2.jpg'
 import mobile from '../images/mobile.png'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -29,12 +29,12 @@ const Hero = () => {
     return (
         <div className='h-full lg:h-screen w-full lg:p-16 p-10' id='home'>
 
-            <div className='flex lg:flex-row md:flex-col flex-col-reverse justify-between items-center gap-20 h-full w-full rounded-xl shadow-lg p-5 '>
+            <div className='flex lg:flex-row md:flex-col flex-col-reverse justify-between items-center gap-20 h-full w-full rounded-xl shadow-lg p-5 bg-white'>
                 <div className=' lg:ms-10 h-full lg:w-4/5 w-full  p-2 flex flex-col justify-center items-center'>
                     <h1 className='font-bold lg:text-3xl text-2xl text-black text-center mb-2' id='herotext'>Hi, I'M</h1>
                     <h1 className='font-bold lg:text-5xl text-3xl  text-teal-400 text-center mb-8 ' id='herotext'>Mari Kannan</h1>
                     <h1 className='font-bold lg:text-xl text-lg text-black text-center mb-10' id='herotext'>Turning designs into interactive realities.<br /> Building fast, beautiful, and intuitive interfaces.</h1>
-                    <div className='h-16 w-full  flex justify-center items-center gap-10'>
+                    <div className='h-16 w-full  flex justify-center items-center gap-8'>
                         <a href="https://github.com/marikannan16" target='_blank'>
                             <svg id='social'
                                 xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className='h-full w-full  flex flex-col justify-center items-center gap-10'>
-                    <img src={hero} alt="hero" className='lg:h-[20rem] lg:w-[20rem] w-56 h-56 rounded-full border-white border-4' id='hero' />
+                    <img src={hero} alt="hero" className='lg:size-96 size-56 rounded-full border-white border-4' id='hero' />
 
                 </div>
                 {/* <div className='h-full w-4/5  flex justify-center items-center'>

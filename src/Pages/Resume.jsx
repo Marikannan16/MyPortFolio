@@ -57,7 +57,7 @@ const Resume = () => {
     return (
         <div className='w-full lg:max-h-full h-full p-10 relative' id='resume'>
             <h1 className='lg:text-5xl text-center text-black font-bold text-2xl'>Resume</h1><br />
-            <div className='h-full w-full rounded-2xl shadow-xl border'><br />
+            <div className='h-full w-full rounded-2xl shadow-xl border bg-white '><br />
                 <h1 className='lg:text-2xl text-xl text-center text-black font-bold'>Education</h1><br />
 
                 <div className="w-full px-4 text-black relative">

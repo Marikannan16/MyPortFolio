@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import mail from '../images/mail.png'
 import gsap from "gsap";
+import Swal from 'sweetalert2'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger)
@@ -11,7 +12,6 @@ const Contact = () => {
       scrollTrigger: {
           trigger: '#contact',
           start: 'top center',
-          markers:true,
           end: '85% bottom',
           scrub: true,
       }
@@ -25,9 +25,8 @@ const Contact = () => {
     y:200,
     opacity:0
   })
-  t6.from('#forms',{
+  t6.from('#form',{
     y:200,
-
     opacity:0
   })
   })
@@ -48,26 +47,55 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Show loading state
+    Swal.fire({
+      title: 'Sending...',
+      text: 'Please wait while we send your message',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      }
+    });
+  
     setIsSubmitting(true);
     setResponseMessage("");
-
+    
     try {
-      const response = await axios.post("https://portbackend-d96d.onrender.com/", formData);
+      const response = await axios.post("https://portbackend-8va9.onrender.com/api/send-email", formData);
+      
+      // Success alert
+      await Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: 'Your message has been sent successfully',
+        confirmButtonColor: '#3085d6'
+      });
+  
       setResponseMessage(response.data.success || "Email sent successfully!");
-    } catch (error) {
-      if (error.response && error.response.data && error.response.data.error) {
-        setResponseMessage(error.response.data.error);
-      } else {
-        setResponseMessage("Failed to send email. Please try again later.");
-      }
-    } finally {
-      setIsSubmitting(false);
+      
+      // Clear form
       setFormData({
         name: "",
         email: "",
         phone: "",
         message: "",
       });
+  
+    } catch (error) {
+      // Error alert
+      const errorMessage = error.response?.data?.error || "Failed to send email. Please try again later.";
+      
+      await Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: errorMessage,
+        confirmButtonColor: '#d33'
+      });
+  
+      setResponseMessage(errorMessage);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -76,7 +104,7 @@ const Contact = () => {
       <h1 className="text-center text-4xl font-extrabold my-6 text-black animate__animated animate__fadeInDown" id="contacthead">
         Contact
       </h1>
-      <div className="border rounded-xl shadow-xl w-full h-full lg:p-10 p-2">
+      <div className="border rounded-xl shadow-xl w-full h-full lg:p-10 p-2 bg-white">
       <div className="max-w-screen-xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="animate-pulse" id="emailimg">
             <img src={mail} alt="" />
@@ -84,7 +112,7 @@ const Contact = () => {
         <div
           className="lg:p-5 p-0"
         >
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form onSubmit={handleSubmit} className="space-y-3" id="form">
            
             <div id="forms">
               <label htmlFor="name" className="block text-black  mb-2 font-medium ms-2">

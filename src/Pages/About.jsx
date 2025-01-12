@@ -33,7 +33,7 @@ const About = () => {
     return (
         <div className='h-full w-full p-8' id='canvas'>
             <h1 className='lg:text-5xl text-center text-black font-bold text-2xl' id='head'> About Me !</h1>
-            <div className='flex lg:flex-row flex-col justify-center items-center gap-10 rounded-xl shadow-lg border lg:p-4 p-1 mt-5'>
+            <div className='flex lg:flex-row flex-col justify-center items-center gap-10 rounded-xl shadow-lg border lg:p-4 p-1 mt-5 bg-white'>
                 <div className='w-full h-full flex justify-center items-center'>
                     <img src={profile} alt="hero" className='lg:h-[20rem] lg:w-[20rem] w-64 h-64 rounded-full border-white border-4' id='profile' />
                 </div>

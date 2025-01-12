@@ -33,7 +33,7 @@ const Projects = () => {
     return (
         <div className=' h-full w-full lg:px-10 px-5' id='project'>
             <h1 className='lg:text-4xl text-center text-2xl font-bold text-black my-2' id='pro'>Projects</h1><br />
-            <div className='h-full w-full border shadow rounded-xl'>
+            <div className='h-full w-full border shadow rounded-xl bg-white'>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 lg:p-20 p-6">
                     <div className='h-[27rem] w-full' id='grid'>
                         <div className=" w-full hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s] h-full ">

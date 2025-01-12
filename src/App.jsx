@@ -6,16 +6,39 @@ import Resume from './Pages/Resume'
 import Projects from './Pages/Projects'
 import Nav from './Pages/Nav'
 import Contact from './Pages/Contact'
-
+import './App.css'
+import amongus from './images/amongus.png'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+gsap.registerPlugin(ScrollTrigger)
 const App = () => {
+  useGSAP(()=>{
+    
+    gsap.to('#among',{
+      y:770,
+      duration:0.2,
+      rotation:360,
+      x:-1000,
+      scrollTrigger:{
+        trigger:'#port',
+        start:'top top',
+        end:'25% 50%',
+        scrub:true
+      }
+    })
+
+  })
+
   return (
-    <div className='relative'>
+    <div className='relative ' id='port'>
+      <img src={amongus} alt="" className='absolute size-36 top-96 right-16 lg:visible invisible' id='among' />
       <Hero/>
       <About/>
       <Resume/>
       <Projects/>
       <Contact/>
-      <span className='absolute top-[44rem] left-0.5 lg:top-[38rem] lg:left-[32rem] z-50'>
+      <span className='fixed top-[90%] left-[38%] z-50'>
         <span className='fixed'>
         <Nav/>
         </span>
