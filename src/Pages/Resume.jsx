@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import resume from '../resume/marikannanresume.pdf'
+import resume from '../resume/MarikannanResumePort.pdf'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'

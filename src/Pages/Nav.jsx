@@ -3,7 +3,7 @@ import React from 'react'
 const Nav = () => {
     return (
         <div>
-            <div className='w-full h-[3.5rem] rounded-r-full rounded-l-full bg-gradient-to-br from-white/10 to-gray-50/90 backdrop-blur-lg shadow-lg flex justify-center items-center gap-5 px-10 py-2'>
+            <div className='w-full lg:h-[3.5rem] rounded-r-full rounded-l-full bg-gradient-to-br from-white/10 to-gray-50/90 backdrop-blur-lg shadow-lg flex justify-center items-center gap-5 px-10 py-2'>
                 <a href="#home">
                 <button className='rounded-full  p-2 bg-white hover:scale-110  '>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">

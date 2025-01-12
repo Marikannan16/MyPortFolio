@@ -34,7 +34,7 @@ const Hero = () => {
                     <h1 className='font-bold lg:text-3xl text-2xl text-black text-center mb-2' id='herotext'>Hi, I'M</h1>
                     <h1 className='font-bold lg:text-5xl text-3xl  text-teal-400 text-center mb-8 ' id='herotext'>Mari Kannan</h1>
                     <h1 className='font-bold lg:text-xl text-lg text-black text-center mb-10' id='herotext'>Turning designs into interactive realities.<br /> Building fast, beautiful, and intuitive interfaces.</h1>
-                    <div className='h-16 w-full  flex justify-center items-center gap-8'>
+                    <div className='h-16 w-full  flex justify-center items-center gap-4'>
                         <a href="https://github.com/marikannan16" target='_blank'>
                             <svg id='social'
                                 xmlns="http://www.w3.org/2000/svg"
