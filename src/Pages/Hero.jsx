@@ -10,18 +10,22 @@ const Hero = () => {
         t1.from('#hero', {
             y: 500,
             opacity: 0,
-            stagger: 1
+            duration: 1.2
         })
         t1.from('#herotext', {
             y: 500,
             opacity: 0,
             stagger: 1
         })
+        t1.from('#hire', {
+            y: 500,
+            opacity: 0,
+        })
         t1.from('#social', {
             y: 500,
             rotation: 360,
             opacity: 0,
-            stagger: 0.5
+            stagger: 1
         })
 
     })
@@ -29,11 +33,23 @@ const Hero = () => {
     return (
         <div className='h-full lg:h-screen w-full lg:p-16 p-10' id='home'>
 
-            <div className='flex lg:flex-row md:flex-col flex-col-reverse justify-between items-center gap-20 h-full w-full rounded-xl shadow-lg p-5 bg-white'>
+            <div className='flex lg:flex-row md:flex-col flex-col-reverse justify-between items-center lg:gap-20 gap-8 h-full w-full rounded-xl shadow-lg p-5 bg-white'>
                 <div className=' lg:ms-10 h-full lg:w-4/5 w-full  p-2 flex flex-col justify-center items-center'>
                     <h1 className='font-bold lg:text-3xl text-2xl text-black text-center mb-2' id='herotext'>Hi, I'M</h1>
                     <h1 className='font-bold lg:text-5xl text-3xl  text-teal-400 text-center mb-8 ' id='herotext'>Mari Kannan</h1>
                     <h1 className='font-bold lg:text-xl text-lg text-black text-center mb-10' id='herotext'>Turning designs into interactive realities.<br /> Building fast, beautiful, and intuitive interfaces.</h1>
+                    <a href="#contact" id='hire'>
+                    <button className="relative mb-7 flex items-center px-6 py-3 overflow-hidden font-medium transition-all bg-indigo-500 rounded-md group">
+                        <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+                            <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white" />
+                        </span>
+                        <span className="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-ml-4 group-hover:-mb-4">
+                            <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white" />
+                        </span>
+                        <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-indigo-600 rounded-md group-hover:translate-x-0" />
+                        <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">Hire Me</span>
+                    </button>
+                    </a>
                     <div className='h-16 w-full  flex justify-center items-center gap-4'>
                         <a href="https://github.com/marikannan16" target='_blank'>
                             <svg id='social'
@@ -71,11 +87,11 @@ const Hero = () => {
                         <a href="https://x.com/4021_b?t=cPoK-QQD8f-iLexyBNa2hg&s=09" target='_blank'>
                             <svg id='social' xmlns="http://www.w3.org/2000/svg" fill='currentColor' className="lg:size-10 size-9 hover:border hover:border-white p-2  hover:rounded-lg hover:animate-pulse  text-yellow-400 hover:text-black" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" /></svg>
                         </a>
-                        
+
                         <a href="mailto:capkannan16@gmail.com" target='_blank'>
-                        <svg id='social' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="lg:size-10 size-9 hover:border hover:border-white p-2  hover:rounded-lg hover:animate-pulse  text-yellow-400 hover:text-red-600" >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                        </svg>
+                            <svg id='social' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="lg:size-10 size-9 hover:border hover:border-white p-2  hover:rounded-lg hover:animate-pulse  text-yellow-400 hover:text-red-600" >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                            </svg>
                         </a>
 
                     </div>

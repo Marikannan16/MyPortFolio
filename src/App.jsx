@@ -1,11 +1,10 @@
-import React from 'react'
-import Home from './Pages/Home'
-import Hero from './Pages/Hero'
-import About from './Pages/About'
-import Resume from './Pages/Resume'
-import Projects from './Pages/Projects'
-import Nav from './Pages/Nav'
-import Contact from './Pages/Contact'
+import React, { lazy, Suspense } from 'react'
+const Hero= lazy(()=>import('./Pages/Hero'))
+const About=lazy(()=>import('./Pages/About'))
+const Resume=lazy(()=>import('./Pages/Resume'))
+const  Projects=lazy(()=>import('./Pages/Projects'))
+const Nav=lazy(()=>import('./Pages/Nav'))
+const  Contact =lazy(()=>import('./Pages/Contact'))
 import './App.css'
 import amongus from './images/amongus.png'
 import gsap from 'gsap'
@@ -14,9 +13,9 @@ import { useGSAP } from '@gsap/react'
 gsap.registerPlugin(ScrollTrigger)
 const App = () => {
   useGSAP(()=>{
-    gsap.to('#among',{
-      repeat:-1,
-      ease:'bounce.in'
+    gsap.from('#among',{
+      y:-700,
+      duration:5,
     })
     const timeline1=gsap.timeline({
       scrollTrigger:{
@@ -30,7 +29,7 @@ const App = () => {
       scrollTrigger:{
         trigger:'#port',
         start:'29% center',
-        end:'37% bottom',
+        end:'45% bottom',
         scrub:true
       }
     })
@@ -38,7 +37,7 @@ const App = () => {
       scrollTrigger:{
         trigger:'#port',
         start:'37% center',
-        end:'56% bottom',
+        end:'60% bottom',
         scrub:true
       }
     })
@@ -53,8 +52,8 @@ const App = () => {
     const timeline5=gsap.timeline({
       scrollTrigger:{
         trigger:'#port',
-        start:'82% 20%',
-        end:'96% bottom',
+        start:'79% 20%',
+        end:'99% bottom',
         scrub:true
       }
     })
@@ -64,24 +63,27 @@ const App = () => {
       rotation:360
     })
     timeline2.to('#among',{
-      x:-500,
       y:1260,
-      rotation:360,
+      x:-540,
+      rotation:720,
       scale:0.3,
-      rotation:360,
-      duration:100
+      duration:1000
     })
+
     timeline3.to('#among',{
-      y:2020,
-      duration:100
+      y:1900,
+      duration:1
     })
     timeline4.to('#among',{
-      y:3100,
+      y:3120,
+      x:-1000,
       scale:0.5,
-      rotation:720,
+      rotation:1080,
     })
     timeline5.to('#among',{
-      y:3900,
+      x:-829,
+      y:3600,
+      scale:2.8,
       rotation:1080
     })
     // gsap.to('#among',{
@@ -100,8 +102,13 @@ const App = () => {
   })
 
   return (
+    <Suspense fallback={
+      <div className='flex justify-center lg:my-80 my-64'>
+         <div className="loader border-r-2 rounded-full border-yellow-500 bg-yellow-300 animate-bounce aspect-square w-12 flex justify-center items-center text-yellow-700">wait</div>
+      </div>
+    }>
     <div className='relative ' id='port'>
-      <img src={amongus} alt="" className='absolute lg:size-36 lg:top-96 top-[20rem] right-16 size-16 z-50 lg:visible invisible' id='among' />
+      <img src={amongus} alt="" className='absolute lg:size-36 lg:top-96 top-[20rem] right-16 size-16 z-50 ' id='among' />
       <Hero/>
       <About/>
       <Resume/>
@@ -113,6 +120,7 @@ const App = () => {
         </span>
       </span>
     </div>
+    </Suspense>
   ) 
 }
 

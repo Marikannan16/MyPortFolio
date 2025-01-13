@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+  import React, { useState } from "react";
 import axios from "axios";
-import mail from '../images/mail.png'
+import mail from '../images/amongus.png'
 import gsap from "gsap";
 import Swal from 'sweetalert2'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -106,8 +106,8 @@ const Contact = () => {
       </h1>
       <div className="border rounded-xl shadow-xl w-full h-full lg:p-10 p-2 bg-white">
       <div className="max-w-screen-xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="animate-pulse" id="emailimg">
-            <img src={mail} alt="" />
+        <div  id="emailimg" className="flex justify-center items-center">
+            <img src={mail} alt="" className="lg:size-96 size-56  lg:opacity-40 opacity-100" />
         </div>
         <div
           className="lg:p-5 p-0"
