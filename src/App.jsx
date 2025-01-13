@@ -1,10 +1,10 @@
-import React, { lazy, Suspense } from 'react'
-const Hero= lazy(()=>import('./Pages/Hero'))
-const About=lazy(()=>import('./Pages/About'))
-const Resume=lazy(()=>import('./Pages/Resume'))
-const  Projects=lazy(()=>import('./Pages/Projects'))
-const Nav=lazy(()=>import('./Pages/Nav'))
-const  Contact =lazy(()=>import('./Pages/Contact'))
+import React from 'react'
+import Hero from './Pages/Hero'
+import About from './Pages/About'
+import Resume from './Pages/Resume'
+import Projects from './Pages/Projects'
+import Nav from './Pages/Nav'
+import Contact from './Pages/Contact'
 import './App.css'
 import amongus from './images/amongus.png'
 import gsap from 'gsap'
@@ -102,11 +102,6 @@ const App = () => {
   })
 
   return (
-    <Suspense fallback={
-      <div className='flex justify-center lg:my-80 my-64'>
-         <div className="loader border-r-2 rounded-full border-yellow-500 bg-yellow-300 animate-bounce aspect-square w-12 flex justify-center items-center text-yellow-700">wait</div>
-      </div>
-    }>
     <div className='relative ' id='port'>
       <img src={amongus} alt="" className='absolute lg:size-36 lg:top-96 top-[20rem] right-16 size-16 z-50 lg:visible invisible' id='among' />
       <Hero/>
@@ -120,7 +115,6 @@ const App = () => {
         </span>
       </span>
     </div>
-    </Suspense>
   ) 
 }
 
