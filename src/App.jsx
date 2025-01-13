@@ -108,7 +108,7 @@ const App = () => {
       </div>
     }>
     <div className='relative ' id='port'>
-      <img src={amongus} alt="" className='absolute lg:size-36 lg:top-96 top-[20rem] right-16 size-16 z-50 ' id='among' />
+      <img src={amongus} alt="" className='absolute lg:size-36 lg:top-96 top-[20rem] right-16 size-16 z-50 lg:visible invisible' id='among' />
       <Hero/>
       <About/>
       <Resume/>
